@@ -1,0 +1,147 @@
+
+= POS Exams Java Seed
+
+A seed project to be used for POS examinations when using
+the **Java** &trade; and **Spring** &trade; stack to
+implement the solutions.
+
+The exam project is a **Gradle multi-project** build with a
+central version catalog. The parts starting with `Aufgabe`
+are meant for you to put your solutions into.
+The parts are:
+
+|===
+| Subproject                 | Description
+
+| `Aufgabe1_ORMapping`       | Put your **Aufgabe 1** solution here.
+| `Aufgabe2_ORMapping`       | Put your **Aufgabe 2** solution here.
+| `Aufgabe3_BusinessService` | Put your **Aufgabe 3** solution here.
+| `Aufgabe4_RestfulApi`      | Put your **Aufgabe 4** solution here.
+|===
+
+== First Step!
+
+Rename file `YOUR-CLASS_YOUR-NAME.txt` with your class and name!
+
+== Part 1 / Aufgabe 1
+
+Is about implementing a class
+model which is mapped into a relational
+database.
+
+Directory: [./Aufgabe1_ORMapping](./Aufgabe1_ORMapping)
+
+Build script: [Aufgabe1_ORMapping/build.gradle.kts](./Aufgabe1_ORMapping/build.gradle.kts)
+
+Project root package: `ormapping1`
+
+Application class: `ormapping1.ORMapping1Application`
+
+Root test class: `ormapping1.ORMapping1ApplicationTest`<br/>
+(use additional specific classes for your tests)
+
+Mind the resulting database model.
+
+Implement tests to ensure your solution
+is correct and works.
+
+
+== Part 2 / Aufgabe 2
+
+Is about implementing a class
+model which is mapped into a relational
+database.
+
+Directory: [./Aufgabe2_ORMapping](./Aufgabe2_ORMapping)
+
+Build script: [Aufgabe2_ORMapping/build.gradle.kts](./Aufgabe2_ORMapping/build.gradle.kts)
+
+Project root package: `ormapping2`
+
+Application class: `ormapping2.ORMapping2Application`
+
+Root test class: `ormapping2.ORMapping2ApplicationTest`<br/>
+(use additional specific classes for your tests)
+
+Mind the resulting database model.
+
+Implement tests to ensure your solution
+is correct and works.
+
+
+== Part 3 / Aufgabe 3
+
+Is about implementing some business
+logic calculations using mostly Java
+language features.
+
+Directory: [./Aufgabe3_BusinessService](./Aufgabe3_BusinessService)
+
+Build script: [Aufgabe3_BusinessService/build.gradle.kts](./Aufgabe3_BusinessService/build.gradle.kts)
+
+Project root package: `businessservice`
+
+Application class: `businessservice.BusinessServiceApplication`
+
+Root test class: `businessservice.BusinessServiceApplicationTest`<br/>
+(use additional specific classes for your tests)
+
+No persistence and no frontend needs to be
+implemented.
+
+Generate the required test data inside
+your tests.
+
+
+== Part 4 / Aufgabe 4
+
+A RESTful API implementation. Showcase
+your skills in implementing and testing
+a RESTful API.
+
+Directory: [./Aufgabe4_RestfulApi](./Aufgabe4_RestfulApi)
+
+Build script: [Aufgabe4_RestfulApi/build.gradle.kts](./Aufgabe4_RestfulApi/build.gradle.kts)
+
+Project root package: `restfulapi`
+
+Application class: `restfulapi.RestfulApiApplication`
+
+Root test class: `restfulapi.RestfulApiApplicationTest`<br/>
+(use additional specific classes for your tests)
+
+No persistence implementation is expected.
+
+Generate the required test data inside your
+tests.
+
+
+[IMPORTANT]
+Good luck!
+
+
+== Details about the project build
+
+The build is based on https://gradle.org/[Gradle]
+
+Shared build configuration:
+
+* Java 25 toolchain,
+* Spring Boot (devtools, validation),
+* JUnit Jupiter,
+* JaCoCo
+
+lives in the convention plugin [buildSrc/src/main/kotlin/POS-exam-java-conventions.gradle.kts](./buildSrc/src/main/kotlin/POS-exam-java-conventions.gradle.kts).
+Dependency versions live in [gradle/libs.versions.toml](./gradle/libs.versions.toml).
+
+=== Commands
+
+[source, shell]
+----
+# compile + test everything
+./gradlew build
+# tests for one module
+./gradlew :Aufgabe1_ORMapping:test
+# one specific test
+./gradlew :Aufgabe1_ORMapping:test --tests "ormapping1.ORMapping1ApplicationTest"
+----
